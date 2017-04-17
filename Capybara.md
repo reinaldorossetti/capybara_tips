@@ -131,9 +131,9 @@ end
     # Vai trocar o frame header para o contexto inicial da página.
     page.driver.browser.switch_to.default_content
     
-    # Vai trocar do contexto inicial para o frame main.
+    # Vai trocar do contexto inicial para o frame main. #
     page.driver.browser.switch_to.frame 'main
-    # Vai trocar do frame Pai main para o subframe subframe_main.
+    # Vai trocar do frame Pai main para o subframe subframe_main. #
     page.driver.browser.switch_to.frame 'subframe_main'
     fill_in 'korisnik', :with => 'foo'
     fill_in 'lozinka', :with => 'bar'
