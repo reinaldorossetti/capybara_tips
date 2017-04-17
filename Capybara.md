@@ -148,13 +148,7 @@ end
     click_button 'Potvrda unosa'
   end
   
-  
-  
 
-save_page
-
-# You need to install launchy gem.
-save_and_open_page
 ```
 
 ## Capybara Common
