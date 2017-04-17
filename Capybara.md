@@ -40,6 +40,12 @@ page.find("#btn_login").click
 # Procura todos os elementos via xpath.
 page.all(:xpath, '//a')
 
+# Procura todos os elementos via css.
+page.all(:css, 'a')
+
+# Procura todos os elementos via css, e selecionar somente o primerio.
+page.all(:css, 'a')[1]
+
 # Procura o primeiro elemento que encontrar via xpath. 
 page.first(:xpath, '//a')
 
@@ -237,4 +243,12 @@ expect(page).to have_field("FirstName", :with => "Rambo")
 expect(page).to have_link("Foo")
 expect(page).to have_link("Foo", :href=>"googl.com")
 expect(page).to have_no_link("Foo", :href=>"google.com")
+```
+
+```
+## Capybara Browser functions.
+# Para mudar para uma outra janela, ou seja  mudar de contexto de uma janela inicial para a última aberta, 
+# Precisamos encontrar a ultima janela com a função window_handles.last e mudar para a atual com a função switch_to.
+popup = page.driver.browser.window_handles.last
+page.driver.browser.switch_to.window(popup)
 ```
