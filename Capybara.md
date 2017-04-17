@@ -46,8 +46,11 @@ page.all(:css, 'a')
 # Procura todos os elementos via css, e selecionar somente o primerio.
 page.all(:css, 'a')[1]
 
-# Procura o primeiro elemento que encontrar via xpath. 
-page.first(:xpath, '//a')
+# Procura o primeiro elemento que encontrar via xpath.
+page.first(:xpath, '//a')[1]
+
+# Procura o primeiro elemento que encontrar via css.
+page.first(:css, 'a')
 
 # Procura o elemento elemento via xpath que tem o atributo id. 
 page.find('//textarea[@id="additional_newline"]')
@@ -247,7 +250,7 @@ expect(page).to have_no_link("Foo", :href=>"google.com")
 
 ## Capybara Browser functions.
 
-```
+```ruby
 # Para mudar para uma outra janela, ou seja  mudar de contexto de uma janela inicial para a última aberta, 
 # Precisamos encontrar a ultima janela com a função window_handles.last e mudar para a atual com a função switch_to.
 popup = page.driver.browser.window_handles.last
