@@ -147,7 +147,10 @@ end
     fill_in 'lozinka', :with => 'bar'
     click_button 'Potvrda unosa'
   end
-  
+
+# Uma coisa legal que podemos fazer procurar o iframe, para depois mudar com o switch_to.
+facebok_iframe_name = find(:xpath, "//*[@id='fb-button-explore']/span/iframe")[:name]
+page.driver.browser.switch_to.frame facebok_iframe_name 
 
 ```
 
