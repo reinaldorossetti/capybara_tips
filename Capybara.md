@@ -102,8 +102,7 @@ end
 within_table("some_table") do
   # ...
 end
-
-# Execute the given block within the given iframe using given frame name or index.
+# Execute um bloco de código em um determinado iframe/frame pelo nome ou o índice do quadro fornecido. Fora do bloco ele volta para o contexto inicial da página (função usada <b>within_frame</b>).
 # within_frame('some_frame') do CODE end
 # within_frame 0 do CODE end
   def check_balance
