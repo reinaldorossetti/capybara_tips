@@ -104,9 +104,21 @@ within_table("some_table") do
 end
 
 # Execute the given block within the given iframe using given frame name or index.
-#
-within_frame('some_frame') do
-end
+# within_frame('some_frame') do CODE end
+  def check_balance
+    visit('/')
+
+    within_frame('main'){
+      fill_in 'korisnik', :with => 'foo'
+      fill_in 'lozinka', :with => 'bar'
+      click_button 'Potvrda unosa'
+    }
+
+    within_frame('header'){
+      click_on 'Stanje' 
+    }
+  end
+
 
 save_page
 
