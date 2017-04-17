@@ -245,8 +245,9 @@ expect(page).to have_link("Foo", :href=>"googl.com")
 expect(page).to have_no_link("Foo", :href=>"google.com")
 ```
 
-```
 ## Capybara Browser functions.
+
+```
 # Para mudar para uma outra janela, ou seja  mudar de contexto de uma janela inicial para a última aberta, 
 # Precisamos encontrar a ultima janela com a função window_handles.last e mudar para a atual com a função switch_to.
 popup = page.driver.browser.window_handles.last
