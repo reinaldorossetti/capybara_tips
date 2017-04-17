@@ -124,17 +124,24 @@ end
 
  def check_balance
     visit('/')
+    # Vai trocar do contexto inicial para o frame header.
     page.driver.browser.switch_to.frame 'header'
     click_on 'Stanje' 
 
-    #Switch page context back to the main browser
+    # Vai trocar o frame header para o contexto inicial da página.
     page.driver.browser.switch_to.default_content
-
-    page.driver.browser.switch_to.frame 'main'
+    
+    # Vai trocar do contexto inicial para o frame main.
+    page.driver.browser.switch_to.frame 'main
+    # Vai trocar do frame Pai main para o subframe subframe_main.
+    page.driver.browser.switch_to.frame 'subframe_main'
     fill_in 'korisnik', :with => 'foo'
     fill_in 'lozinka', :with => 'bar'
     click_button 'Potvrda unosa'
   end
+  
+  
+  
 
 save_page
 
