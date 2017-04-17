@@ -105,6 +105,7 @@ end
 
 # Execute the given block within the given iframe using given frame name or index.
 # within_frame('some_frame') do CODE end
+# within_frame 0 do CODE end
   def check_balance
     visit('/')
 
@@ -119,6 +120,21 @@ end
     }
   end
 
+# sem o within_frame, podemos fazer com a função switch_to.
+
+ def check_balance
+    visit('/')
+    page.driver.browser.switch_to.frame 'header'
+    click_on 'Stanje' 
+
+    #Switch page context back to the main browser
+    page.driver.browser.switch_to.default_content
+
+    page.driver.browser.switch_to.frame 'main'
+    fill_in 'korisnik', :with => 'foo'
+    fill_in 'lozinka', :with => 'bar'
+    click_button 'Potvrda unosa'
+  end
 
 save_page
 
