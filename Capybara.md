@@ -249,4 +249,7 @@ expect(page).to have_no_link("Foo", :href=>"google.com")
 # Precisamos encontrar a ultima janela com a função window_handles.last e mudar para a atual com a função switch_to.
 popup = page.driver.browser.window_handles.last
 page.driver.browser.switch_to.window(popup)
+# Podemos voltar para a primeira janela.
+main = page.driver.browser.window_handles.first
+page.driver.browser.switch_to.window(main)
 ```
