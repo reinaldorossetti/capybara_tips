@@ -270,9 +270,10 @@ Capybara.configure do |config|
   config.default_max_wait_time = 30
   config.default_selector = :css
 end
+```
 
-**Fontes:**
+# Fontes:
 http://www.rubydoc.info/github/jnicklas/capybara/Capybara.configure
 https://github.com/teamcapybara/capybara/blob/master/lib/capybara.rb
 https://github.com/teamcapybara/capybara/blob/master/README.md
-```
+
