@@ -87,9 +87,9 @@ page.find_link('other')[:href]
 # => '/some_uri'
 ```
 
-**Note:** `find` will wait for an element to appear on the page, as explained in the Ajax section. If the element does not appear it will raise an error.
+**Note:** O comando find irá esperar por um elemento aparecer na página, o padrão de espera é dois segundos podendo ser alterado. Se o elemento não aparecer, ele gerar uma mensagem de erro.
 
-**Note:** In XPath the expression `//` means something very specific, and it might not be what you think. Contrary to common belief, `//` means "anywhere in the document" not "anywhere in the current context".
+**Nota:** Em XPath a expressão // significa algo muito específico, e pode não ser o que você pensa. Contrariamente à crença comum, // significa "em qualquer parte do documento" e não "em qualquer lugar no contexto atual".
 
 
 ## Capybara Scoped Finder `within`
@@ -255,4 +255,24 @@ page.driver.browser.switch_to.window(popup)
 # Podemos voltar para a primeira janela.
 main = page.driver.browser.window_handles.first
 page.driver.browser.switch_to.window(main)
+```
+
+## Capybara Configurações.
+```
+# Mudando a espera máxima de 2 segundos para 30 segundos.
+
+Capybara.default_max_wait_time = 30
+
+# Segunda forma de setar várias configurações.
+Capybara.configure do |config|
+  config.run_server = false
+  config.app_host   = 'http://www.google.com'
+  config.default_max_wait_time = 30
+  config.default_selector = :css
+end
+
+**Fontes:**
+http://www.rubydoc.info/github/jnicklas/capybara/Capybara.configure
+https://github.com/teamcapybara/capybara/blob/master/lib/capybara.rb
+https://github.com/teamcapybara/capybara/blob/master/README.md
 ```
