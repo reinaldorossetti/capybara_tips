@@ -47,7 +47,7 @@ page.all(:css, 'a')
 page.all(:css, 'a')[1]
 
 # Procura o primeiro elemento que encontrar via xpath.
-page.first(:xpath, '//a')[1]
+page.first(:xpath, '//a')
 
 # Procura o primeiro elemento que encontrar via css.
 page.first(:css, 'a')
