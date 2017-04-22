@@ -1,8 +1,6 @@
 # capybara_tips
 Mostrando os comandos do Selenium/Capybara Framework.
-
-
-
+```
 Given(/^que esteja na home do site Orangehrm$/) do
   visit "https://orangehrm-demo-6x.orangehrmlive.com/auth/login"
 end
@@ -56,3 +54,4 @@ Then(/^poderei adicionar usuario$/) do
   sleep 10 # Para ver o menu adicionar usuario
 
 end
+```
