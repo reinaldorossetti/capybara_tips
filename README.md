@@ -1,7 +1,7 @@
 
 # capybara_tips
 
-Mostrando os comandos do Capybara Framework e fazendo uma pequena comparação. Esse projetinho veio atráves de um colega do grupo do QA Ninja, ele me pediu uma ajuda, e já tinha feito uma lista de comandos do Capybara para lembrete Capybara_comandos.md que está no nosso projeto, mas nem sempre a gente sabe como usa o comando certo para determinada ocasião, quando usado de forma errada vai com certerza emitir uma mensagem de erro, colocamos alguns no final.
+Mostrando os comandos do Capybara Framework e fazendo uma pequena comparação. Esse projetinho veio atráves de um colega do grupo do QA Ninja, ele me pediu uma ajuda, e já tinha feito uma lista de comandos do Capybara para lembrete <a href="https://github.com/reinaldorossetti/capybara_tips/blob/master/Capybara_comandos.md">Capybara_comandos.md</a> que está no nosso projeto, mas nem sempre a gente sabe como usa o comando certo para determinada ocasião, quando usado de forma errada vai com certerza emitir uma mensagem de erro, colocamos alguns no final.
 
 ```
 Given(/^que esteja na home do site Orangehrm$/) do
