@@ -1,5 +1,8 @@
+
 # capybara_tips
-Mostrando os comandos do Selenium/Capybara Framework.
+
+Mostrando os comandos do Capybara Framework e fazendo uma pequena comparação. Esse projetinho veio atráves de um colega do grupo do QA Ninja, ele me pediu uma ajuda, e já tinha feito uma lista de comandos do Capybara para lembrete Capybara_comandos.md que está no nosso projeto, mas nem sempre a gente sabe como usa o comando certo para determinada ocasião, quando usado de forma errada vai com certerza emitir uma mensagem de erro, colocamos alguns no final.
+
 ```
 Given(/^que esteja na home do site Orangehrm$/) do
   visit "https://orangehrm-demo-6x.orangehrmlive.com/auth/login"
@@ -55,3 +58,19 @@ Then(/^poderei adicionar usuario$/) do
 
 end
 ```
+
+Erros comuns que podem ocorrer:
+
+>> Messagem de frame errado:
+expected to find frame nil at least 1 time but there were no matches (Capybara::ExpectationNotMet)
+      ./features/step_definitions/cadastro_usuario.rb:19:in `/^poderei adicionar usuario$/'
+      features/specifications/cadastro_usuario.feature:10:in `Entao poderei adicionar usuario'
+
+
+>> acessou a pagina, mas o objeto nao está mais na tela, ele elemento foi usado uma vez,
+e foi morto, tem que espera o elemento ser carregado novamente.
+ TypeError: can't access dead object (Selenium::WebDriver::Error::UnknownError)
+      ./features/step_definitions/cadastro_usuario.rb:44:in `block (2 levels) in <top (required)>'
+
+>> usando o find quando existe varios elementos vai dar o erro abaixo:
+      Ambiguous match, found 50 elements matching css "td[class*=\"edit_item tooltipped\"]" (Capybara::Ambiguous)
