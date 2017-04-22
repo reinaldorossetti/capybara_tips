@@ -67,10 +67,10 @@ expected to find frame nil at least 1 time but there were no matches (Capybara::
       features/specifications/cadastro_usuario.feature:10:in `Entao poderei adicionar usuario'
 
 
->> acessou a pagina, mas o objeto nao está mais na tela, ele elemento foi usado uma vez,
-e foi morto, tem que espera o elemento ser carregado novamente.
+>> Acessou a página, mas o objeto nao está mais na tela, ele elemento foi usado uma vez,
+e foi morto, tem que espera o elemento ser carregado novamente, pode também estar acessando o iframe errado.
  TypeError: can't access dead object (Selenium::WebDriver::Error::UnknownError)
       ./features/step_definitions/cadastro_usuario.rb:44:in `block (2 levels) in <top (required)>'
 
->> usando o find quando existe varios elementos vai dar o erro abaixo:
+>> Usando o find quando existe varios elementos vai dar o erro abaixo:
       Ambiguous match, found 50 elements matching css "td[class*=\"edit_item tooltipped\"]" (Capybara::Ambiguous)
