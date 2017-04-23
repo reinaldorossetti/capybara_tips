@@ -1,6 +1,6 @@
 
 Given(/^que esteja na home do site Orangehrm$/) do
-  visit "https://orangehrm-demo-6x.orangehrmlive.com/auth/login"
+  visit "/auth/login"
 end
 
 When(/^logar como administrador$/) do
@@ -48,6 +48,8 @@ Then(/^poderei adicionar usuario$/) do
 
   test4 = find(".btn-floating > i:nth-child(1)")
   test4.click
+
+  expect(page).to have_content 'Add User'
 
   sleep 10 # Para ver o menu adicionar usuario
 

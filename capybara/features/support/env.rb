@@ -2,7 +2,7 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'cucumber'
 require 'selenium-webdriver'
-require 'rspec'
+require 'capybara/rspec'
 require 'rspec/retry'
 
 # Browser usado
@@ -44,6 +44,7 @@ Capybara.register_driver :selenium do |app|
   end
 end
 
+Capybara.app_host = "https://orangehrm-demo-6x.orangehrmlive.com"
 
 RSpec.configure do |config|
   # show retry status in spec process
