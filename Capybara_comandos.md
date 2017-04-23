@@ -296,6 +296,19 @@ Capybara.configure do |config|
   config.default_selector = :css
 end
 ```
+## Tratamento de erro com 'rspec/retry'.
+```ruby
+RSpec.configure do |config|
+  # show retry status in spec process
+  config.verbose_retry = true
+  # Try twice (retry once)
+  config.default_retry_count = 2
+  # Only retry when Selenium raises Net::ReadTimeout
+  config.exceptions_to_retry = [Net::ReadTimeout]
+  Capybara.javascript_driver = :webkit
+end
+```
+
 
 # Fontes:
 http://www.rubydoc.info/github/jnicklas/capybara/Capybara.configure
