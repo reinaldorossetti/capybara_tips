@@ -7,6 +7,13 @@ visit "https://orangehrm-demo-6x.orangehrmlive.com/auth/login"
 # Podemos verificar se está na página correta com a função have_current_path.
 expect(page).to have_current_path(Urls[target], url: true)
 # url: true -> ele compara a url toda, sem isso ele compara uma parte.
+
+# Podemos deixar o env.rb já a url padrão configurada.
+Capybara.app_host = "https://orangehrm-demo-6x.orangehrmlive.com"
+
+# Visitar a sub-url /auth/login.
+visit "/auth/login"
+
 ```
 
 ## Capybara Actions (Ações).
