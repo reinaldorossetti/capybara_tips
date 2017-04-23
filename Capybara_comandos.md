@@ -1,4 +1,15 @@
-## Capybara Actions(Ações)
+## Capybara Navegando entre páginas.
+
+```ruby
+# Visitar a página desejada.
+visit "https://orangehrm-demo-6x.orangehrmlive.com/auth/login"
+
+# Podemos verificar se está na página correta com a função have_current_path.
+expect(page).to have_current_path(Urls[target], url: true)
+# url: true -> ele compara a url toda, sem isso ele compara uma parte.
+```
+
+## Capybara Actions (Ações).
 
 ```ruby
 # Faz o clique no link com o texto "Save".
@@ -34,7 +45,7 @@ attach_file Rails.root.join('spec/fixture/some_file.png')
 page.find("#btn_login").click
 ```
 
-## Capybara Finders(Busca)
+## Capybara Finders (Usando a Busca do elemento no Capybara).
 
 ```ruby
 # Procura todos os elementos via xpath.
