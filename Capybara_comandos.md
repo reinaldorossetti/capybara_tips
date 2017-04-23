@@ -179,7 +179,10 @@ using_wait_time 6 do
 end
 ```
 
-## Capybara Matchers
+## Usando o Capybara com o RSpec
+
+A biblioteca do RSpec 2+ é supportado adicionando ao env.rb o require 'capybara/rspec'.
+
 
 ```ruby
 expect(page).to have_content("Some Content")
@@ -244,6 +247,10 @@ expect(page).to have_link("Foo")
 expect(page).to have_link("Foo", :href=>"googl.com")
 expect(page).to have_no_link("Foo", :href=>"google.com")
 ```
+
+Note: When you require 'capybara/rspec' proxy methods are installed to work around name collisions between Capybara::DSL methods all/within and the identically named built-in RSpec matchers. If you opt not to require 'capybara/rspec' you can install the proxy methods by requiring 'capybara/rspec/matcher_proxies' after requiring RSpec and 'capybara/dsl'
+
+
 
 ## Capybara Browser functions.
 
