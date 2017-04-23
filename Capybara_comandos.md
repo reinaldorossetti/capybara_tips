@@ -181,7 +181,7 @@ end
 
 ## Usando o Capybara com o RSpec
 
-A biblioteca do RSpec 2+ é supportado adicionando ao env.rb o require 'capybara/rspec'.
+A biblioteca do RSpec 2+ é supportado adicionando ao env.rb o require 'capybara/rspec'. O RSpec não é padrão no Capybara puro, ou seja tem que adicionar a biblioteca.
 
 
 ```ruby
