@@ -284,6 +284,10 @@ expect(page).to have_field("FirstName", :with => "Rambo")
 expect(page).to have_link("Foo")
 expect(page).to have_link("Foo", :href=>"googl.com")
 expect(page).to have_no_link("Foo", :href=>"google.com")
+
+# Verifica se tem o css selector, que tem o campo com visibilidade igual a falso. 
+expect(page).to have_selector('#selector_id', visible: false)
+
 ```
 
 Note: When you require 'capybara/rspec' proxy methods are installed to work around name collisions between Capybara::DSL methods all/within and the identically named built-in RSpec matchers. If you opt not to require 'capybara/rspec' you can install the proxy methods by requiring 'capybara/rspec/matcher_proxies' after requiring RSpec and 'capybara/dsl'
