@@ -53,6 +53,9 @@ Then(/^poderei adicionar usuario$/) do
 
   test4 = find(".btn-floating > i:nth-child(1)")
   test4.click
+  
+  # Faz um assert que deve ter o conteúdo Add User na Página.
+  expect(page).to have_content 'Add User'
 
   sleep 10 # Para ver o menu adicionar usuario
 
