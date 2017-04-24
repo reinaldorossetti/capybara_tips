@@ -56,53 +56,60 @@ page.find("#btn_login").click
 
 ```ruby
 # Procura todos os elementos via xpath.
-page.all(:xpath, '//a')
+all(:xpath, '//a')
 
 # Procura todos os elementos via css.
-page.all(:css, 'a')
+all(:css, 'a')
 
 # Procura todos os elementos via css, e selecionar somente o primerio.
-page.all(:css, 'a')[1]
+all(:css, 'a')[1]
 
 # Procura o primeiro elemento que encontrar via xpath.
-page.first(:xpath, '//a')
+first(:xpath, '//a')
 
 # Procura o primeiro elemento que encontrar via css.
-page.first(:css, 'a')
+first(:css, 'a')
 
 # Procura o elemento elemento via xpath que tem o atributo id. 
-page.find('//textarea[@id="additional_newline"]')
+find('//textarea[@id="additional_newline"]')
 
 # Procura o elemento elemento via xpath que tem o atributo id e o checked. 
-page.find(:xpath, "//input[@id='form_pets_dog']")['checked']
+find(:xpath, "//input[@id='form_pets_dog']")['checked']
 # => true
 
 # Procura o elemento via css e ativa o focus sobre o elemento.
-page.find(:css, '#with_focus_event').trigger(:focus)
-page.find(:css,'.wrapper').hover
+find(:css, '#with_focus_event').trigger(:focus)
+find(:css,'.wrapper').hover
 
 # Procura o elemento e traz o valor.
-page.find_field("test_field").value
+find_field("test_field").value
 # => 'blah'
 
 # Procura o elemento e traz a tag do elemento.
-page.find_by_id('red').tag_name
+find_by_id('red').tag_name
 # => 'a'
 
 # Procura o elemento invisível pelo atributo id. 
-page.find_by_id("hidden_via_ancestor", visible: false)
+find_by_id("hidden_via_ancestor", visible: false)
 
 # Procura o butão pelo nome e traz o atributo value(texto).
-page.find_button('What an Awesome')[:value]
+find_button('What an Awesome')[:value]
 # => 'awesome'
 
 # Procura o elemento link pelo nome e traz o texto.
-page.find_link('abo').text
+find_link('abo').text
 # => 'labore'
 
 # Procura o elemento link pelo nome e traz o href(caminho do link).
-page.find_link('other')[:href]
+find_link('other')[:href]
 # => '/some_uri'
+
+# Procura todos os elementos com a tag a, e faz um for para trazer o href dos elementos. 
+all('a').each { |a| a[:href] }
+
+# Procura um elemento pela class bar(.) dentro do elemento ID foo(#). 
+find('#foo').find('.bar')
+
 ```
 
 **Note:** O comando find irá esperar por um elemento aparecer na página, o padrão de espera é dois segundos podendo ser alterado. Se o elemento não aparecer, ele gerar uma mensagem de erro.
