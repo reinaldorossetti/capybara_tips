@@ -186,6 +186,15 @@ visit("http://google.com")
 
 page.current_url
 
+# Imprime o titulo da página.
+puts page.title
+
+# Verifica se o titulo corresponde ao valor "my title".
+page.has_title? "my title"
+
+# Verifica se o titulo "my not found title" não existe mais.
+page.has_no_title? "my not found title"
+
 # Execute the given script, not returning a result. This is useful for scripts that return
 # complex objects, such as jQuery statements. +execute_script+ should be used over
 # +evaluate_script+ whenever possible.
