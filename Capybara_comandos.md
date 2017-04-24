@@ -49,7 +49,7 @@ attach_file Rails.root.join('spec/fixture/some_file.png')
 # Procura o elemento via CSS e dar o clique.
 ## CSS Selector => #btn_login
 
-page.find("#btn_login").click
+find("#btn_login").click
 
 # Procura o elemento via CSS e dar o clique no texto.
 find('.clickable-text', :text => 'Click me').click
