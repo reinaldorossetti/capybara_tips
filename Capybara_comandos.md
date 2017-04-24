@@ -157,6 +157,16 @@ end
     }
   end
 
+# Iframe dentro de iframe podemos fazer assim.
+within_frame 0 do
+  within_frame 0 do
+    within_frame 0 do
+      # Code
+    end
+  end
+end
+
+
 # sem o within_frame, podemos fazer com a função switch_to.
 
  def check_balance
