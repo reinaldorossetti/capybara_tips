@@ -302,6 +302,13 @@ expect(page).to have_selector('#selector_id', visible: false)
 
 Note: When you require 'capybara/rspec' proxy methods are installed to work around name collisions between Capybara::DSL methods all/within and the identically named built-in RSpec matchers. If you opt not to require 'capybara/rspec' you can install the proxy methods by requiring 'capybara/rspec/matcher_proxies' after requiring RSpec and 'capybara/dsl'
 
+## Capybara Matchers (Assert)
+page.assert_selector('p#foo', :count => 4)
+page.assert_selector('li', :text => 'Horse', :visible => true)
+page.has_css?('li', :text => 'Horse', :visible => true)
+page.has_xpath?('.//li', :text => 'Horse', :visible => true)
+page.has_selector?('li', :text => 'Horse', :visible => true)
+page.has_field?('Name', :with => 'Jonas')
 
 
 ## Capybara Browser functions.
