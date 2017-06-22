@@ -61,6 +61,10 @@ element.send_keys :enter
 element.send_keys "tet", :left, "s"   #=> value: 'test'
 element.send_keys [:control, 'a'], :space   #=> value: ' ' - assuming ctrl-a selects all contents
 
+# ou 
+
+find('.myselector_name>input').native.send_keys(:return)
+
 ```
 
 ## Capybara Finders (Usando a Busca do elemento no Capybara).
