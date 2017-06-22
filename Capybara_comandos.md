@@ -54,6 +54,13 @@ find("#btn_login").click
 # Procura o elemento via CSS e dar o clique no texto.
 find('.clickable-text', :text => 'Click me').click
 
+# enviando dados
+element.send_keys "foo"                     #=> value: 'foo'
+# enviando um enter
+element.send_keys :enter
+element.send_keys "tet", :left, "s"   #=> value: 'test'
+element.send_keys [:control, 'a'], :space   #=> value: ' ' - assuming ctrl-a selects all contents
+
 ```
 
 ## Capybara Finders (Usando a Busca do elemento no Capybara).
