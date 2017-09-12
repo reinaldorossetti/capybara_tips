@@ -1,6 +1,6 @@
-Vimos um Exemplo um teste em Capybara, e vimos os comandos, agora vamos falar sobre boas práticas, muitas das vezes executamos o nosso teste falha e não sabemos porque falhou eu fiz tudo certo, mas por algum motivo desconhecido e falhou. 
+Vimos um Exemplo de um teste usando o framework Capybara, e estudamos os comandos, agora vamos falar sobre boas práticas, muitas das vezes executamos o nosso teste falha e não sabemos porque falhou eu fiz tudo certo, mas por algum motivo desconhecido e falhou. 
 
-Um exemplo de um teste fraco é quando eu uso jquery e javascript, o que acontece, quando colocamos um javascript ou jquery pra ser executado, temos que ter muito cuidado, pois quando você usa eles não existe nenhuma espera desses elementos, ou seja tem uma probabilidade muito grande de ele falhar.
+Um exemplo de um teste fraco é quando usamos um jquery ou javascript para dar um clique, isso geralmente acontece quando a aplicação não é boa e não responde ao click do capybara, quando colocamos um javascript ou jquery pra ser executado, temos que ter muito cuidado, pois quando você usa eles não existe nenhuma espera desses elementos, ou seja tem uma probabilidade muito grande de ele falhar.
 
 1) SCRIPT FRACO: 
 page.execute_script "$('button:contains(#{button})').click()"
