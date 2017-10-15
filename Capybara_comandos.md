@@ -362,6 +362,32 @@ RSpec.configure do |config|
 end
 ```
 
+## Colocando o mouse sobre o elemento, temos algumas formas mostradas abaixo:
+### Forma mais simples é usando a função "hover", pra isso precisamos habilitar o natives_events na instância do browser.
+```ruby
+
+# configurando o native_events.
+Capybara.register_driver :selenium do |app|
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile.native_events = true
+  Capybara::Selenium::Driver.new(app, :browser => :firefox, profile: profile)
+end
+
+# agora somente usar o hover, para simular o mouse sobre o elemento.
+find('.some_class').hover
+
+```
+### A segunda forma é trigger/ativar o evento mouseover, nesse caso não precisamos do native_events, mas precisamos habilitar o webkit.
+
+```ruby
+RSpec.configure do |config|
+  # ...
+  Capybara.javascript_driver = :webkit
+end
+
+# ativando o mouseover.
+page.find('#element').trigger(:mouseover)
+```
 
 # Fontes:
 http://www.rubydoc.info/github/jnicklas/capybara/Capybara.configure
