@@ -387,6 +387,10 @@ end
 
 # ativando o mouseover.
 page.find('#element').trigger(:mouseover)
+# também podemos trigger o mouseenter
+page.find('#element').trigger(:mouseenter)
+
+**O uso da "page" nas versões novas não é necessaria.
 ```
 
 # Fontes:
