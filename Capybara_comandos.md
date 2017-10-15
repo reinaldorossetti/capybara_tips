@@ -366,7 +366,7 @@ end
 ### Forma mais simples é usando a função "hover", pra isso precisamos habilitar o natives_events na instância do browser.
 ```ruby
 
-# configurando o native_events.
+# configurando o native_events como true.
 Capybara.register_driver :selenium do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
   profile.native_events = true
