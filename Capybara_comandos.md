@@ -125,6 +125,11 @@ all('a').each { |a| a[:href] }
 # Procura um elemento pela class bar(.) dentro do elemento ID foo(#). 
 find('#foo').find('.bar')
 
+# busca o primeiro nó que é um texto
+node = page.find('span', text: string)
+# volta para o elemento antecessor via xpath e procura a tag input para poder dar o click.
+node.find(:xpath, '..').find('input[name="tipoBusca"]').click
+
 ```
 
 **Note:** O comando find irá esperar por um elemento aparecer na página, o padrão de espera é dois segundos podendo ser alterado. Se o elemento não aparecer, ele gerar uma mensagem de erro.
