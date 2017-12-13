@@ -324,7 +324,7 @@ Note: When you require 'capybara/rspec' proxy methods are installed to work arou
 
 ## Capybara Matchers (Assert)
 ```ruby
-# Você não precisa usar o rpect/expect como biblioteca de teste unitário, o próprio Capybara tem um assert interno.
+# Você não precisa usar o rpect/expect como biblioteca de teste unitário, o próprio Capybara tem um modulo chamado Matchers para realizar os asserts acredito que como ele usa os métodos internos do capybara/selenium, é mais rápido em alguns milisegundos.
 
 page.assert_selector('p#foo', :count => 4)
 page.assert_selector('li', :text => 'Horse', :visible => true)
@@ -335,7 +335,9 @@ page.assert_all_of_selectors(:css, '#my_div', 'a.not_clicked')
 page.assert_none_of_selectors(:custom, 'Tom', 'Joe', visible: all)
 page.assert_none_of_selectors(:css, '#my_div', 'a.not_clicked')
 
+# Para verificar se existe um determina Locator na tela usamos o has_css?, passando o nome o locator com ou sem argumentos adicionais.
 page.has_css?('li', :text => 'Horse', :visible => true)
+# Para fazer o inverso da função acima usamos has_no_css?.
 page.has_no_css?('li', :text => 'Horse', :visible => true)
 
 # Para verificar se existe um determina link na tela usamos o has_link?, passando o nome do link.
