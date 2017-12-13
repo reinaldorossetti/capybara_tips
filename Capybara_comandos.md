@@ -249,7 +249,7 @@ end
 
 ## Usando o Capybara com o RSpec
 
-A biblioteca do RSpec 2+ é supportado adicionando ao arquivo env.rb o require 'capybara/rspec'. O RSpec não é padrão no Capybara puro, ou seja você tem que adicionar a biblioteca 'capybara/rspec'.
+A biblioteca do RSpec 2+ é supportado adicionando ao arquivo env.rb o require 'capybara/rspec'. O RSpec não é padrão no Capybara puro,<br> ou seja você tem que adicionar a biblioteca 'capybara/rspec'.
 
 
 ```ruby
@@ -324,7 +324,7 @@ Note: When you require 'capybara/rspec' proxy methods are installed to work arou
 
 ## Capybara Matchers (Assert)
 ```ruby
-# Você não precisa usar o rpect/expect como biblioteca de teste unitário, o próprio Capybara tem um modulo chamado Matchers para realizar os asserts acredito que como ele usa os métodos internos do capybara/selenium, é mais rápido em alguns milisegundos.
+# Você não precisa usar o rpect/expect como biblioteca de teste unitário, o próprio Capybara tem um modulo chamado Matchers para<br> realizar os asserts acredito que como ele usa os métodos internos do capybara/selenium, é mais rápido em alguns milisegundos.
 
 page.assert_selector('p#foo', :count => 4)
 page.assert_selector('li', :text => 'Horse', :visible => true)
