@@ -328,7 +328,6 @@ Note: When you require 'capybara/rspec' proxy methods are installed to work arou
 
 page.assert_selector('p#foo', :count => 4)
 page.assert_selector('li', :text => 'Horse', :visible => true)
-page.has_no_select?('li', :text => 'Horse', :visible => true)
 page.assert_all_of_selectors(:custom, 'Tom', 'Joe', visible: all)
 page.assert_all_of_selectors(:css, '#my_div', 'a.not_clicked')
 
@@ -345,10 +344,12 @@ page.has_link?("Create a New Article")
 
 # Para verificar se existe um determina texto na tela usamos o has_content? ou o has_text?, passando o valor do texto.
 page.has_text?('lorem ipsum')
+# Para fazer o inverso da função acima usamos has_no_text?.
 page.has_no_text?('lorem ipsum')
 
 page.has_xpath?('.//li', :text => 'Horse', :visible => true)
 page.has_selector?('li', :text => 'Horse', :visible => true)
+page.has_no_select?('li', :text => 'Horse', :visible => true)
 page.has_field?('Name', :with => 'Jonas')
 ```
 
