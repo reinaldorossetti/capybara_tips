@@ -324,9 +324,27 @@ Note: When you require 'capybara/rspec' proxy methods are installed to work arou
 
 ## Capybara Matchers (Assert)
 ```ruby
+# Você não precisa usar o rpect/expect como biblioteca de teste unitário, o próprio Capybara tem um assert interno.
+
 page.assert_selector('p#foo', :count => 4)
 page.assert_selector('li', :text => 'Horse', :visible => true)
+page.has_no_select?('li', :text => 'Horse', :visible => true)
+page.assert_all_of_selectors(:custom, 'Tom', 'Joe', visible: all)
+page.assert_all_of_selectors(:css, '#my_div', 'a.not_clicked')
+
+page.assert_none_of_selectors(:custom, 'Tom', 'Joe', visible: all)
+page.assert_none_of_selectors(:css, '#my_div', 'a.not_clicked')
+
 page.has_css?('li', :text => 'Horse', :visible => true)
+page.has_no_css?('li', :text => 'Horse', :visible => true)
+
+# Para verificar se existe um determina link na tela usamos o has_link?, passando o nome do link.
+page.has_link?("Create a New Article")
+
+# Para verificar se existe um determina texto na tela usamos o has_content? ou o has_text?, passando o valor do texto.
+page.has_text?('lorem ipsum')
+page.has_no_text?('lorem ipsum')
+
 page.has_xpath?('.//li', :text => 'Horse', :visible => true)
 page.has_selector?('li', :text => 'Horse', :visible => true)
 page.has_field?('Name', :with => 'Jonas')
