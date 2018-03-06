@@ -45,7 +45,7 @@ choose 'Content'
 select 'Option', from: 'Label'
 
 ```
-## Aplicado as ações sobre o elemento, é o modo mais comum de fazer, você pode primeiro procurar o Elemento e depois aplicar a ação, a segunda forma é buscar o elemento e na mesma linha aplicar ação.
+## Aplicado as ações sobre o elemento, é o modo mais comum de fazer, você pode primeiro procurar o Elemento e depois aplicar a ação. A segunda forma é buscar o elemento e na mesma linha aplicar ação sobre o elemento.
 
 ```ruby
 
