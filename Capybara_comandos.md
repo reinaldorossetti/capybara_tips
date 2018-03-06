@@ -110,11 +110,9 @@ wait (Integer) — default: Capybara.default_max_wait_time — The time to wait 
 
 ```
 
-## Outra forma de dar o clique é através do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, .
+## Outra forma de dar o clique é através do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, e qualquer outra tecla, geralmente o capybara usa o : em frente da tecla, isso que dizer que ele é um simbolo, ou seja o nome da tecla interno.
 
 ```ruby
-
-
 
 # enviando dados
 element.send_keys "foo"                     #=> value: 'foo'
