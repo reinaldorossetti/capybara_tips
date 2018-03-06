@@ -110,7 +110,7 @@ wait (Integer) — default: Capybara.default_max_wait_time — The time to wait 
 
 ```
 
-## Outra forma de dar o clique é atravez do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, .
+## Outra forma de dar o clique é através do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, .
 
 ```ruby
 
