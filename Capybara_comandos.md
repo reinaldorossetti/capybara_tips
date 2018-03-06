@@ -430,9 +430,11 @@ page.driver.browser.switch_to.window(main)
 ```
 
 ## Capybara Configurações.
-```
-# Mudando a espera máxima de 2 segundos para 30 segundos.
+### No Capybara temos somente a espera interna dele, podemos mudar a espera para 30 segundos, como fizemos no exemplo abaixo.
 
+```
+
+# mudando a espera interna para 30 segundos.
 Capybara.default_max_wait_time = 30
 
 # Segunda forma de setar várias configurações.
@@ -442,6 +444,7 @@ Capybara.configure do |config|
   config.default_max_wait_time = 30
   config.default_selector = :css
 end
+
 ```
 ## Tratamento de erro com 'rspec/retry'.
 ```ruby
