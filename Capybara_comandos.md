@@ -17,8 +17,10 @@ visit "/auth/login"
 ```
 
 ## Capybara Actions (Ações).
+## Aplicado as ações direto pelo conteúdo do elemento, uma observação desse tipo de técnica, tem que observar que a performance é inferior quando você busca um elemento único, nesse caso ele vai trazer do os elementos do mesmo tipo e iteirar na lista de elementos, assim sendo mais lento.
 
 ```ruby
+
 # Faz o clique no link com o texto "Save".
 click_link 'Save'
 
@@ -42,17 +44,77 @@ choose 'Content'
 # Seleciona a opção pela Texto "Label".
 select 'Option', from: 'Label'
 
-# Inserir um arquivo.
-attach_file Rails.root.join('spec/fixture/some_file.png')
 ```
-```
-# Procura o elemento via CSS e dar o clique.
-## CSS Selector => #btn_login
+## Aplicado as ações sobre o elemento, é o modo mais comum de fazer, você pode primeiro procurar o Elemento e depois aplicar a ação, a segunda forma é buscar o elemento e na mesma linha aplicar ação.
 
+```ruby
+
+# Procura o elemento via CSS e efetuar o Clique no Elemento Web.
+# HTML Elemento: <input id="btn_login">
+# CSS Selector => #btn_login
+
+Elemento= find("#btn_login")
+Elemento.click
+
+# Segunda opção é fazer tudo na mesma linha.
 find("#btn_login").click
 
-# Procura o elemento via CSS e dar o clique no texto.
-find('.clickable-text', :text => 'Click me').click
+# Terceira forma seria colocar o seletor dentro de uma variável global, o $ (Dollar) em ruby quer dizer que é uma variável Global.
+$login = "#btn_login"
+find($login).click
+
+# Muitas pessoas usam o SitePrism, o que o siteprism faz, ele auto-mapea o elemento ou seja você informa o nome do elemento e o Selector. Pra isso é preciso importar o siteprism e configurar ele.
+
+element :login, '#btn_login'
+
+# você mapeou o elemento pelo siteprism então agora é somente usar a função sobre o nome que você deu.
+login.click
+
+# O siteprism seria semelhante uma função aonde você mapea o elemento, como no exemplo abaixo.
+
+def login
+  find("#btn_login")
+end
+
+-------------------------
+
+Outra forma seria indicar o selector do elemento e  mais um atributo como o conteúdo do elemento, no caso de butão tipo span.
+# Nesse caso adicionamos mais um atributo que é o texto/conteúdo do elemento.
+
+find('span.clickable-text', :text => 'Click me').click
+
+** Uma observação é que o find o padrão é via CSS Selector, para fazer via xpath, você precisa indicar que é um xpath como no exemplo abaixo: 
+
+find(:xpath, '//a')
+
+```
+
+# Lista de Atributos que podem ser adicionados ao find ou all do Capybara.
+
+```ruby
+Options Hash (options):
+
+text (String, Regexp) — Only find elements which contain this text or match this regexp
+visible (Boolean, Symbol) — Only find elements with the specified visibility:
+true - only finds visible elements.
+false - finds invisible and visible elements.
+:all - same as false; finds visible and invisible elements.
+:hidden - only finds invisible elements.
+:visible - same as true; only finds visible elements.
+count (Integer) — Exact number of matches that are expected to be found
+maximum (Integer) — Maximum number of matches that are expected to be found
+minimum (Integer) — Minimum number of matches that are expected to be found
+between (Range) — Number of matches found must be within the given range
+exact (Boolean) — Control whether `is` expressions in the given XPath match exactly or partially
+wait (Integer) — default: Capybara.default_max_wait_time — The time to wait for element count expectations to become true
+
+```
+
+## Outra forma de dar o clique é atravez do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, .
+
+```ruby
+
+
 
 # enviando dados
 element.send_keys "foo"                     #=> value: 'foo'
@@ -64,6 +126,9 @@ element.send_keys [:control, 'a'], :space   #=> value: ' ' - assuming ctrl-a sel
 # ou 
 
 find('.myselector_name>input').native.send_keys(:return)
+
+# Inserir um arquivo.
+attach_file Rails.root.join('spec/fixture/some_file.png')
 
 ```
 
@@ -427,4 +492,3 @@ page.find('#element').trigger(:mouseenter)
 http://www.rubydoc.info/github/jnicklas/capybara/Capybara.configure
 https://github.com/teamcapybara/capybara/blob/master/lib/capybara.rb
 https://github.com/teamcapybara/capybara/blob/master/README.md
-
