@@ -45,7 +45,7 @@ choose 'Content'
 select 'Option', from: 'Label'
 
 ```
-## Aplicado as ações sobre o elemento, é o modo mais comum de fazer, você pode primeiro procurar o Elemento e depois aplicar a ação. A segunda forma é buscar o elemento e na mesma linha aplicar ação sobre o elemento.
+### Aplicado as ações sobre o elemento, é o modo mais comum de fazer, você pode primeiro procurar o Elemento e depois aplicar a ação. A segunda forma é buscar o elemento e na mesma linha aplicar ação sobre o elemento.
 
 ```ruby
 
@@ -89,7 +89,7 @@ find(:xpath, '//a')
 
 ```
 
-# Lista de Atributos que podem ser adicionados ao find ou all do Capybara.
+### Lista de Atributos que podem ser adicionados ao find ou all do Capybara.
 
 ```ruby
 Options Hash (options):
@@ -110,20 +110,21 @@ wait (Integer) — default: Capybara.default_max_wait_time — The time to wait 
 
 ```
 
-## Outra forma de dar o clique é através do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, e qualquer outra tecla, geralmente o capybara usa o : em frente da tecla, isso que dizer que ele é um simbolo, ou seja o nome da tecla interno.
+### Outra forma de dar o clique é através do teclado com o enter em cima do elemento, não somente o enter com, tab, ctrol+a, e qualquer outra tecla, geralmente o capybara usa o : em frente da tecla, isso que dizer que ele é um simbolo, ou seja o nome da tecla interno.
+### Enviamos comandos do teclado através da função "send_keys" (sem aspas duplas) em seguida o simbolo com o nome do teclado :enter.
 
 ```ruby
+# enviando dados via send_keys
+element.send_keys "foo"   # Deve preencher o campo com 'foo'.
 
-# enviando dados
-element.send_keys "foo"                     #=> value: 'foo'
-# enviando um enter
+# enviando comandos do teclado agora como enter e outros.
 element.send_keys :enter
 element.send_keys "tet", :left, "s"   #=> value: 'test'
-element.send_keys [:control, 'a'], :space   #=> value: ' ' - assuming ctrl-a selects all contents
+element.send_keys [:control, 'a'], :space   # Nesse caso envia um conjunto de comandos, que vai limpar o conteúdo.
 
 # ou 
 
-find('.myselector_name>input').native.send_keys(:return)
+find('.myselector_name>input').native.send_keys(:return) # vai realizar um enter sobre o elemento.
 
 # Inserir um arquivo.
 attach_file Rails.root.join('spec/fixture/some_file.png')
