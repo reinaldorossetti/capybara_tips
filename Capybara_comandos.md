@@ -17,7 +17,7 @@ visit "/auth/login"
 ```
 
 ## Capybara Actions (Ações).
-## Aplicado as ações direto pelo conteúdo do elemento, uma observação desse tipo de técnica, tem que observar que a performance é inferior quando você busca um elemento único, nesse caso ele vai trazer do os elementos do mesmo tipo e iteirar na lista de elementos, assim sendo mais lento.
+### Aplicado as ações direto pelo conteúdo do elemento, uma observação desse tipo de técnica, tem que observar que a performance é inferior quando você busca um elemento único, nesse caso ele vai trazer todos os elementos do mesmo tipo e iteirar na lista de elementos para encontrar o texto, assim sendo mais lento.
 
 ```ruby
 
