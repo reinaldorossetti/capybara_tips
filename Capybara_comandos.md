@@ -308,7 +308,18 @@ page.has_no_title? "my not found title"
 # complex objects, such as jQuery statements. +execute_script+ should be used over
 # +evaluate_script+ whenever possible.
 #
-page.execute_script("$('#change').text('Funky Doodle')")
+Via Jquery:
+
+page.execute_script("$('#meu_id').text('Reinaldo')")
+
+# Via DOM colocando o valor no atributo value:
+
+page.execute_script("document.querySelector('#meu_id').value = \"Reinaldo\"")
+
+# Via DOM colocando o valor no conteúdo texto:
+
+page.execute_script("document.querySelector('#meu_id').textContent = \"Reinaldo\"")
+
 
 # Evaluate the given JavaScript and return the result. Be careful when using this with
 # scripts that return complex objects, such as jQuery statements. +execute_script+ might
